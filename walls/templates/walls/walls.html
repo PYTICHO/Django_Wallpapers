@@ -1,0 +1,53 @@
+{% extends 'walls/base.html' %}
+{% load static %}
+{% load specifications %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'walls/css/walls.css' %}">
+{% endblock %}
+{% block title %}👌{% endblock %}
+
+
+{% block content %}
+    <aside>
+        <div class="imgs_top imgs">
+            {% for num in range_top %}
+                {% get_src as src %}
+                <img class="img-banner" src="{{ src.url }}" alt="">
+            {% endfor %}
+        </div>
+
+        <div class="imgs_left imgs">
+            {% for num in range_left %}
+                {% get_src as src %}
+                <img class="img-banner" src="{{ src.url }}" alt="">
+            {% endfor %}
+        </div>
+
+
+
+        <div class="hello-banner">
+            <p>Привет! Меня зовут N🙋‍♂️. Чтобы помочь тебе попдобрать обои, которые тебе понравятся, я предложу 16 обоев, из которых ты должен будешь выбрать те, которые тебе больше всего понравились👌</p>
+            <a href="{% url 'compilation' %}"><button>ПОДОБРАТЬ ОБОИ</button></a>
+        </div>
+
+
+
+        <div class="imgs_right imgs">
+            {% for num in range_right %}
+                {% get_src as src %}
+                <img class="img-banner" src="{{ src.url }}" alt="">
+            {% endfor %}
+        </div>
+
+        <div class="imgs_bottom imgs">
+            {% for num in range_bottom %}
+                {% get_src as src %}
+                <img class="img-banner" src="{{ src.url }}" alt="">
+            {% endfor %}
+        </div>
+
+        <div class="back"></div>
+
+    </aside>
+{% endblock %}

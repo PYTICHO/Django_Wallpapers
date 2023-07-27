@@ -1,0 +1,65 @@
+body {
+    background-color: #323030;
+    overflow: hidden;
+}
+
+
+.imgs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.img {
+    width: 24.5vw;
+    height: 22.5vh;
+    padding: 2px;
+    transition: transform 0.2s linear;
+    border-radius: 8px;
+}
+.img:hover {
+    transform: scale(1.15);
+    z-index: 2;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px 5vw 0px 0px;
+}
+
+.button a {
+    height: 40px;
+    width: fit-content;
+}
+
+.button a button {
+    border-radius: 8px;
+    width: 140%;
+    height: 100%;
+    transition: all .15s linear;
+    border: 0;
+}
+
+.button a .button-choose:not(.active) {
+    box-shadow: inset 0 1px 1px rgba(111, 55, 125, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(0, 0, 0, 0.3), 0 4px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px #150a1e;
+    background-image: linear-gradient(#5a3a7c, #472a6b);
+    text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 -1px 0 #311d47;
+}
+
+.button a .button-skip {
+    background-color: transparent;
+    color: #a675b3;
+}
+
+.button a button:hover {
+    transform: scale(1.2);
+    color: #fff
+}
+
+.a-choose {
+    margin-right: 40%;
+}

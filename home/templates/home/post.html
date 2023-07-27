@@ -1,0 +1,29 @@
+{% extends 'walls/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'home/css/post.css' %}">
+{% endblock %}
+{% block title %}Post📭{% endblock %}
+
+
+{% block content %}
+    <div class="post">
+        <img src="{{ item.wall.url }}" alt="">
+        <ul>
+            <li><span class="nice-text">Название:</span> {{ item.title }}</li>
+            <li><span class="nice-text">Категория:</span>{% for c in item.cat.all %} {{ c }} {% endfor %}</li>
+            <li><span class="nice-text">Дата:</span> {{ item.date }}</li>
+        </ul>
+    </div>
+
+    <div class="download">
+        <a href="{{ item.wall.url }}" download>
+            <button>Скачать файл</button>
+        </a>
+    </div>
+
+{% endblock %}
+
+
+

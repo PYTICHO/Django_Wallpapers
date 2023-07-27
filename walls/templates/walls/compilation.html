@@ -1,0 +1,31 @@
+{% extends 'walls/base.html' %}
+{% load static %}
+{% load specifications %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'walls/css/compilation.css' %}">
+    <link rel="stylesheet" href="">
+{% endblock %}
+    {% block title %}Choose🐘{% endblock %}
+
+
+{% block content %}
+    <div class="imgs">
+        {% for id in random_id %}
+            {% get_src_with_id id as src %}
+            <img class="img" src="{{ src.url }}" alt="">
+        {% endfor %}
+    </div>
+
+    <div class="button">
+        <a class="a-choose" href="{% url 'home' %}">
+            <button class="button-choose">CHOOSE❗ <span class="choosesElements"></span> </button>
+            
+        </a>
+
+        <a href="{% url 'home' %}" class="a-skip">
+            <button class="button-skip">Пропустить</button>
+        </a>
+    </div>
+    <script src="{% static 'walls/js/compilation.js' %}"></script>  
+{% endblock %}

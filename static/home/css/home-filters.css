@@ -1,0 +1,36 @@
+.filters {
+    width: 99.5%;
+    height: 15vh;
+    background-color: #128;
+    border-radius: 8px;
+    margin: 3px 3px 0;
+}
+
+
+.filters ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.filters ul li {
+    font-size: 17px;
+    color: black;
+}
+
+.select {
+    border-radius: 8px;
+    background: #2a2a2a;
+    border: 0;
+    color: #fff;
+    text-align: center;
+    
+}
+
+.select::-webkit-scrollbar-track {
+    background-color: red
+  }

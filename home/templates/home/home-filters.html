@@ -1,0 +1,35 @@
+{% extends 'home/home.html' %}
+{% load static %}
+
+{% block filters %}
+
+    <div class="filters">
+        <ul>
+            <li>
+                Категории: 
+                <select class="select" id="selectCat">
+                    <option value="0" class="option">Все</option>
+
+                    {% for cat in catList %}
+                        <option value="{{ cat.pk }}" class="option option-cat">{{ cat.name }}</option> 
+                    {% endfor %}
+                </select>
+            </li>
+            
+            
+
+
+            <li>
+                Сортировать по: 
+                <select id="sort" class="select">
+                    {% for sort in sortList %}
+                        <option class="option option-sort">{{ sort }}</option> 
+                    {% endfor %}
+                </select>
+            </li>
+        </ul>
+    </div>
+    <script src="{% static 'home/js/home-filters.js' %}"></script>
+
+
+{% endblock %}

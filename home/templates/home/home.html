@@ -1,0 +1,76 @@
+{% extends 'walls/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/home-filters.css' %}">
+{% endblock %}
+{% block title %}Home😘{% endblock %}
+
+
+{% block content %}
+                    <!-- NAVBAR -->
+    <div class="menu">
+        <div class="main-menu">  
+            <div class="menu-nav"> 
+                {% if cat_selected == 'all' %} 
+                    <span class="filter-selected">Все Обои</span>
+                {% else %}
+                    <a class="filter" href="{% url 'home' %}">Все Обои</a>
+                {% endif %} 
+
+
+                {% if cat_selected == 'filters' %} 
+                    <span class="filter-selected">Фильтры</span>
+                {% else %}
+                    <a class="filter" href="{% url 'home-filters' 0 'date' %}">Фильтры</a>
+                {% endif %} 
+
+
+                {% if cat_selected == 'recomendations' %} 
+                    <span class="filter-selected">Рекомендации</span>
+                {% else %}
+                    <a class="filter" href="{% url 'home-recomendations' %}">Рекомендации</a>
+                {% endif %} 
+
+
+
+
+
+                
+                
+            </div>
+
+            <div class="menu-avatar">
+                <a href="#">
+                    <img src="{% static 'walls/img/default-avatar.svg' %}" alt="" class="avatar-photo">
+                    <h6>UserName</h6>
+                </a>
+            </div> 
+        </div>
+    </div>
+
+
+
+
+                        <!-- Filters • -->
+    {% block filters %}{% endblock %}
+
+
+
+                        <!-- Walls • -->
+    <div class="items">
+        {% if items %}
+            {% for item in items %}
+                <div class="item">
+                    <a href="{% url 'content-id' item.pk %}">
+                        <img class="wall-photo" src="{{item.wall.url}}" alt="">
+                    </a> 
+                </div>
+            {% endfor %}
+        {% else %}
+            <span style="color:aliceblue;margin-top:5%;">На этом наши полномочия - ВСЁ!</span>
+        {% endif %}
+    </div>
+
+{% endblock %}
